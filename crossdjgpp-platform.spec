@@ -2,7 +2,7 @@ Summary:	DJGPP GNU Binary Utility Development Utilities - libraries
 Summary(pl):	Narzêdzia programistyczne GNU DJGPP - biblioteki
 Name:		crossdjgpp-platform
 Version:	203
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Libraries
