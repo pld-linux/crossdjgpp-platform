@@ -6,13 +6,6 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 URL:		http://www.delorie.com/djgpp
 Source0:	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/djcrx%{version}.zip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
