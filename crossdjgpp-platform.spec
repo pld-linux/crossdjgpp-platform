@@ -15,6 +15,7 @@ PreReq:		fix-info-dir
 
 %define		target		i386-pc-msdosdjgpp
 %define		arch		%{_prefix}/%{target}
+%define		no_install_post_strip	1
 
 %description
 DJGPP is a port of GNU GCC to the DOS environment. (It stands for DJ's
