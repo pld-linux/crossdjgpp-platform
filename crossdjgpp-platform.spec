@@ -7,7 +7,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Libraries
 URL:		http://www.delorie.com/djgpp/
-Source0:	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/djcrx%{version}.zip
+Source0:	http://www.delorie.com/pub/djgpp/current/v2/djcrx%{version}.zip
 # Source0-md5:	dbaceb26365a14e702f2e1c9def16afc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	unzip
