@@ -1,4 +1,5 @@
 Summary:	DJGPP GNU Binary Utility Development Utilities - libraries
+Summary(pl):	Narzêdzia programistyczne GNU DJGPP - biblioteki
 Name:		crossdjgpp-platform
 Version:	203
 Release:	1
@@ -6,23 +7,33 @@ Epoch:		1
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 URL:		http://www.delorie.com/djgpp
 Source0:	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/djcrx%{version}.zip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires: 	unzip
+BuildRequires:	unzip
 PreReq:		fix-info-dir
 
 %define		target		i386-pc-msdosdjgpp
 %define		arch		%{_prefix}/%{target}
 
 %description
-DJGPP is a port of GNU GCC to the DOS environment. (It stands for
-DJ's Gnu Programming Platform, if it has to stand for something, but
-it's best left ambiguous.)
+DJGPP is a port of GNU GCC to the DOS environment. (It stands for DJ's
+Gnu Programming Platform, if it has to stand for something, but it's
+best left ambiguous.)
 
 This package contains DOS API includes and libraries.
+
+%description -l pl
+DJGPP to port GNU GCC dla ¶rodowiska DOS (skrót oznacza DJ's Gnu
+Programming Platform, je¶li ju¿ koniecznie ma co¶ oznaczaæ).
+
+Ten pakiet zawiera pliki nag³ówkowe i biblioteki DOS API.
 
 %prep
 %setup -q -c -T -n djcrx-%{version}
@@ -53,7 +64,10 @@ EOF
 	sed -e 's/libc\.info/djgpp-libc.info/g' \
 		> $RPM_BUILD_ROOT%{_infodir}/djgpp-libc.info
 
-install stubify stubedit $RPM_BUILD_ROOT/%{_bindir}
+install stubify stubedit $RPM_BUILD_ROOT%{_bindir}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -66,6 +80,3 @@ install stubify stubedit $RPM_BUILD_ROOT/%{_bindir}
 %{arch}
 %{_infodir}/*
 %attr(755,root,root) %{_bindir}/*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
