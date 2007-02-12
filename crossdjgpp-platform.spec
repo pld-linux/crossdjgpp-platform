@@ -1,5 +1,5 @@
 Summary:	DJGPP GNU Binary Utility Development Utilities - libraries
-Summary(pl):	Narzêdzia programistyczne GNU DJGPP - biblioteki
+Summary(pl.UTF-8):   NarzÄ™dzia programistyczne GNU DJGPP - biblioteki
 Name:		crossdjgpp-platform
 Version:	203
 Release:	2
@@ -24,11 +24,11 @@ best left ambiguous.)
 
 This package contains DOS API includes and libraries.
 
-%description -l pl
-DJGPP to port GNU GCC dla ¶rodowiska DOS (skrót oznacza DJ's Gnu
-Programming Platform, je¶li ju¿ koniecznie ma co¶ oznaczaæ).
+%description -l pl.UTF-8
+DJGPP to port GNU GCC dla Å›rodowiska DOS (skrÃ³t oznacza DJ's Gnu
+Programming Platform, jeÅ›li juÅ¼ koniecznie ma coÅ› oznaczaÄ‡).
 
-Ten pakiet zawiera pliki nag³ówkowe i biblioteki DOS API.
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe i biblioteki DOS API.
 
 %prep
 %setup -q -c -T -n djcrx-%{version}
