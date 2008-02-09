@@ -6,12 +6,11 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Libraries
-URL:		http://www.delorie.com/djgpp/
 Source0:	http://www.delorie.com/pub/djgpp/current/v2/djcrx%{version}.zip
 # Source0-md5:	dbaceb26365a14e702f2e1c9def16afc
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+URL:		http://www.delorie.com/djgpp/
 BuildRequires:	unzip
-PreReq:		fix-info-dir
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		i386-pc-msdosdjgpp
 %define		arch		%{_prefix}/%{target}
@@ -64,14 +63,18 @@ install stubify stubedit $RPM_BUILD_ROOT%{_bindir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
-%{arch}
-%{_infodir}/*
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/stubedit
+%attr(755,root,root) %{_bindir}/stubify
+%dir %{arch}
+%{arch}/bin
+%{arch}/include
+%{arch}/lib
+%{_infodir}/djgpp-libc.info*
